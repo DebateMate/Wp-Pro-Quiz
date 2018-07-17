@@ -533,11 +533,11 @@ wpProQuizReady(function () {
 
                     $questionList.sortable("destroy");
 
-                    $items.sort(function (a, b) {
-                        return $(a).data('pos') > $(b).data('pos') ? 1 : -1;
-                    });
+                    // $items.sort(function (a, b) {
+                    //     return $(a).data('pos') > $(b).data('pos') ? 1 : -1;
+                    // });
 
-                    $questionList.append($items);
+                    // $questionList.append($items);
                 },
 
                 matrix_sort_answer: function () {
