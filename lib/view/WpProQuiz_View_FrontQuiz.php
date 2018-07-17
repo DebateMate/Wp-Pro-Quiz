@@ -695,13 +695,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
         ?>
         <div style="display: none;" class="wpProQuiz_results">
             <h4 class="wpProQuiz_header"><?php _e('Results', 'wp-pro-quiz'); ?></h4>
-            <?php if (!$this->quiz->isHideResultCorrectQuestion()) { ?>
-                <p>
-                    <?php printf(__('%s of %s questions answered correctly', 'wp-pro-quiz'),
-                        '<span class="wpProQuiz_correct_answer">0</span>', '<span>' . $questionCount . '</span>'); ?>
-                </p>
-            <?php }
-            if (!$this->quiz->isHideResultQuizTime()) { ?>
+            <?php if (!$this->quiz->isHideResultQuizTime()) { ?>
                 <p class="wpProQuiz_quiz_time">
                     <?php _e('Your time: <span></span>', 'wp-pro-quiz'); ?>
                 </p>
@@ -766,7 +760,12 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                     <?php } ?>
                 </ul>
             </div>
-            <?php
+            <?php if (!$this->quiz->isHideResultCorrectQuestion()) { ?>
+                <p>
+                    <?php printf(__('%s of %s questions answered correctly', 'wp-pro-quiz'),
+                        '<span class="wpProQuiz_correct_answer">0</span>', '<span>' . $questionCount . '</span>'); ?>
+                </p>
+            <?php }
             if ($this->quiz->isToplistActivated()) {
                 if ($this->quiz->getToplistDataShowIn() == WpProQuiz_Model_Quiz::QUIZ_TOPLIST_SHOW_IN_NORMAL) {
                     echo do_shortcode('[WpProQuiz_toplist ' . $this->quiz->getId() . ' q="true"]');
