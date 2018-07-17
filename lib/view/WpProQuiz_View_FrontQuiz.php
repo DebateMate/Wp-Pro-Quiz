@@ -781,7 +781,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                 <?php }
                 if (!$this->quiz->isBtnViewQuestionHidden()) { ?>
                     <input class="wpProQuiz_button" type="button" name="reShowQuestion"
-                           value="<?php _e('View questions', 'wp-pro-quiz'); ?>">
+                           value="<?php _e('Quiz overview', 'wp-pro-quiz'); ?>">
                 <?php } ?>
                 <?php if ($this->quiz->isToplistActivated() && $this->quiz->getToplistDataShowIn() == WpProQuiz_Model_Quiz::QUIZ_TOPLIST_SHOW_IN_BUTTON) { ?>
                     <input class="wpProQuiz_button" type="button" name="showToplist"
