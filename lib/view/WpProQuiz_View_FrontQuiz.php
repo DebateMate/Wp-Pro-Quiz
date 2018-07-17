@@ -620,7 +620,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
     private function showStartQuizBox()
     {
         ?>
-        <div class="wpProQuiz_text">
+        <div class="wpProQuiz_text" style="display: none;">
             <p>
                 <?php echo do_shortcode(apply_filters('comment_text', $this->quiz->getText())); ?>
             </p>
@@ -807,7 +807,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
         $json = array();
         $catPoints = array();
         ?>
-        <div style="display: none;" class="wpProQuiz_quiz">
+        <div class="wpProQuiz_quiz">
             <ol class="wpProQuiz_list">
                 <?php
                 $index = 0;
@@ -844,7 +844,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                     }
 
                     ?>
-                    <li class="wpProQuiz_listItem" style="display: none;">
+                    <li class="wpProQuiz_listItem">
                         <div
                             class="wpProQuiz_question_page" <?php $this->isDisplayNone($this->quiz->getQuizModus() != WpProQuiz_Model_Quiz::QUIZ_MODUS_SINGLE && !$this->quiz->isHideQuestionPositionOverview()); ?> >
                             <?php printf(__('Question %s of %s', 'wp-pro-quiz'), '<span>' . $index . '</span>',
