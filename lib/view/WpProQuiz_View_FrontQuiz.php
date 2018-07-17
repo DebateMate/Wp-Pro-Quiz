@@ -851,7 +851,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                         </div>
                         <h5 style="<?php echo $this->quiz->isHideQuestionNumbering() ? 'display: none;' : 'display: inline-block;' ?>"
                             class="wpProQuiz_header">
-                            <span><?php echo $index; ?></span>. <?php _e('Question', 'wp-pro-quiz'); ?>
+                            <?php _e('Question', 'wp-pro-quiz'); ?> <?php echo $index; ?>
                         </h5>
 
                         <?php if ($this->quiz->isShowPoints()) { ?>
