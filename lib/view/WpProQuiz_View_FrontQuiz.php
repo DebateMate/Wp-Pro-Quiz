@@ -467,6 +467,8 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                                             echo '<label>';
                                             echo '<input name="' . $name . '" type="radio" value="' . esc_attr($data) . '"> ',
                                             esc_html($data);
+                                            // Added for use in creating custom styled controls
+                                            echo '<span class="checkmark"></span>';
                                             echo '</label> ';
                                         }
                                     }
@@ -934,6 +936,8 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                                                        type="<?php echo $question->getAnswerType() === 'single' ? 'radio' : 'checkbox'; ?>"
                                                        name="question_<?php echo $this->quiz->getId(); ?>_<?php echo $question->getId(); ?>"
                                                        value="<?php echo($answer_index + 1); ?>"> <?php echo $answer_text; ?>
+                                                        <?php // Added for use in creating custom styled controls ?>
+                                                        <span class="checkmark"></span>
                                             </label>
 
                                         <?php } else {
