@@ -97,7 +97,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                             </div>
                         </div>
                     </div>
-                    <div class="postbox">
+                    <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
                         <h3 class="hndle"><?php _e('Category', 'wp-pro-quiz'); ?><?php _e('(optional)',
                                 'wp-pro-quiz'); ?></h3>
 
@@ -148,7 +148,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                             ?>
                         </div>
                     </div>
-                    <div class="postbox"
+                    <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>"
                          style="<?php echo $this->quiz->isHideAnswerMessageBox() ? '' : 'display: none;'; ?>">
                         <h3 class="hndle"><?php _e('Message with the correct / incorrect answer',
                                 'wp-pro-quiz'); ?></h3>
@@ -196,7 +196,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                             </div>
                         </div>
                     </div>
-                    <div class="postbox">
+                    <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
                         <h3 class="hndle"><?php _e('Hint', 'wp-pro-quiz'); ?><?php _e('(optional)',
                                 'wp-pro-quiz'); ?></h3>
 
@@ -237,7 +237,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                                        value="multiple" <?php echo ($type === 'multiple') ? 'checked="checked"' : ''; ?>>
                                 <?php _e('Multiple choice', 'wp-pro-quiz'); ?>
                             </label>
-                            <label style="padding-right: 10px;">
+                            <label class="<?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>" style="padding-right: 10px;">
                                 <input type="radio" name="answerType"
                                        value="free_answer" <?php echo ($type === 'free_answer') ? 'checked="checked"' : ''; ?>>
                                 <?php _e('"Free" choice', 'wp-pro-quiz'); ?>
@@ -247,17 +247,17 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                                        value="sort_answer" <?php echo ($type === 'sort_answer') ? 'checked="checked"' : ''; ?>>
                                 <?php _e('"Sorting" choice', 'wp-pro-quiz'); ?>
                             </label>
-                            <label style="padding-right: 10px;">
+                            <label class="<?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>" style="padding-right: 10px;">
                                 <input type="radio" name="answerType"
                                        value="matrix_sort_answer" <?php echo ($type === 'matrix_sort_answer') ? 'checked="checked"' : ''; ?>>
                                 <?php _e('"Matrix Sorting" choice', 'wp-pro-quiz'); ?>
                             </label>
-                            <label style="padding-right: 10px;">
+                            <label class="<?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>" style="padding-right: 10px;">
                                 <input type="radio" name="answerType"
                                        value="cloze_answer" <?php echo ($type === 'cloze_answer') ? 'checked="checked"' : ''; ?>>
                                 <?php _e('Cloze', 'wp-pro-quiz'); ?>
                             </label>
-                            <label style="padding-right: 10px;">
+                            <label class="<?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>" style="padding-right: 10px;">
                                 <input type="radio" name="answerType"
                                        value="assessment_answer" <?php echo ($type === 'assessment_answer') ? 'checked="checked"' : ''; ?>>
                                 <?php _e('Assessment', 'wp-pro-quiz'); ?>
