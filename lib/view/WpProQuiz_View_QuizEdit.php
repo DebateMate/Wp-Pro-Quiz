@@ -58,7 +58,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                                    value="<?php echo htmlspecialchars($this->quiz->getName(), ENT_QUOTES); ?>">
                         </div>
                     </div>
-                    <div class="postbox">
+                    <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
                         <h3 class="hndle"><?php _e('Category', 'wp-pro-quiz'); ?><?php _e('(optional)',
                                 'wp-pro-quiz'); ?></h3>
 
@@ -101,7 +101,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
 
                     <?php do_action('wpProQuiz_action_plugin_quizEdit', $this); ?>
 
-                    <div class="postbox">
+                    <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
                         <h3 class="hndle"><?php _e('Options', 'wp-pro-quiz'); ?></h3>
 
                         <div class="inside">
@@ -696,7 +696,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                     <?php $this->form(); ?>
                     <?php $this->adminEmailOption(); ?>
                     <?php $this->userEmailOption(); ?>
-                    <div class="postbox">
+                    <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
                         <h3 class="hndle"><?php _e('Quiz description', 'wp-pro-quiz'); ?><?php _e('(required)',
                                 'wp-pro-quiz'); ?></h3>
 
@@ -849,7 +849,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
     private function resultOptions()
     {
         ?>
-        <div class="postbox">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
             <h3 class="hndle"><?php _e('Result-Options', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
@@ -1021,7 +1021,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
     {
         ?>
 
-        <div class="postbox">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
             <h3 class="hndle"><?php _e('Question-Options', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
@@ -1273,7 +1273,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
     private function leaderboardOptions()
     {
         ?>
-        <div class="postbox">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
             <h3 class="hndle"><?php _e('Leaderboard', 'wp-pro-quiz'); ?><?php _e('(optional)', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
@@ -1485,7 +1485,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
     private function quizMode()
     {
         ?>
-        <div class="postbox">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
             <h3 class="hndle"><?php _e('Quiz-Mode', 'wp-pro-quiz'); ?><?php _e('(required)', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
@@ -1608,7 +1608,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
         }
 
         ?>
-        <div class="postbox">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
             <h3 class="hndle"><?php _e('Custom fields', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
@@ -1839,7 +1839,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
         $email = $this->quiz->getAdminEmail();
         $email = $email === null ? WpProQuiz_Model_Email::getDefault(true) : $email;
         ?>
-        <div class="postbox" id="adminEmailSettings">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>" id="adminEmailSettings">
             <h3 class="hndle"><?php _e('Admin e-mail settings', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
@@ -2003,7 +2003,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
         $email = $email === null ? WpProQuiz_Model_Email::getDefault(false) : $email;
         $to = $email->getTo();
         ?>
-        <div class="postbox" id="userEmailSettings">
+        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>" id="userEmailSettings">
             <h3 class="hndle"><?php _e('User e-mail settings', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
