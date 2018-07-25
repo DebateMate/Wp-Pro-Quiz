@@ -89,7 +89,7 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
             return;
         }
         
-        if ( !$quizId ) {
+        if ( !$quizId && !isset($this->_post['submit']) ) {
             // Force load template if it exists
             $this->_post['templateLoad'] = "load template";
             $this->_post['templateLoadId'] = "1";
