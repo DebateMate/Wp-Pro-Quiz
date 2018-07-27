@@ -144,7 +144,18 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
 
                         <div class="inside">
                             <?php
-                            wp_editor($this->question->getQuestion(), "question", array('textarea_rows' => 5));
+                            $question_text = $this->question->getQuestion();
+                            if ( $question_text === null || $question_text === '' ) {
+                                $type = $this->question->getAnswerType();
+                                $type = $type === null ? 'single' : $type;
+                                $question_text = "<strong>How could you deliver this activity to a class of 30 students? </strong>\n<em><span style=\"font-weight: 300;\">(This question has one correct answer)</span></em>";
+                                if ( $type === 'multiple' ) {
+                                    $question_text = "<strong>How could you deliver this activity to a class of 30 students? </strong>\n<em><span style=\"font-weight: 300;\">(<span class=\"s1\">This question may have multiple correct answers</span>)</span></em>";
+                                } else if ( $type === 'sort_answer' ) {
+                                    $question_text = "<strong><span class=\"s1\">What’s the correct order of difficulty of these teahing techniques?</span></strong>\n<em><span style=\"font-weight: 300;\">(Drag the answers to position them in the correct order - from the least to the most difficult)</span></em>";
+                                }
+                            }
+                            wp_editor( $question_text, "question", array('textarea_rows' => 5));
                             ?>
                         </div>
                     </div>
