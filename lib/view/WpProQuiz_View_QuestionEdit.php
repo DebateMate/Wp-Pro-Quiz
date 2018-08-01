@@ -169,7 +169,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                         </div>
                     </div>
                     <div style="<?php echo $this->quiz->isHideAnswerMessageBox() ? 'display: none;' : ''; ?>">
-                        <div class="postbox">
+                        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
                             <h3 class="hndle"><?php _e('Message with the correct answer',
                                     'wp-pro-quiz'); ?><?php _e('(optional)', 'wp-pro-quiz'); ?></h3>
 
@@ -193,11 +193,11 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                         </div>
                         <div class="postbox" id="wpProQuiz_incorrectMassageBox">
                             <h3 class="hndle"><?php _e('Message with the incorrect answer',
-                                    'wp-pro-quiz'); ?><?php _e('(optional)', 'wp-pro-quiz'); ?></h3>
+                                    'wp-pro-quiz'); ?><?php _e('(required)', 'wp-pro-quiz'); ?></h3>
 
                             <div class="inside">
                                 <p class="description">
-                                    <?php _e('This text will be visible if answered incorrectly. It can be used as explanation for complex questions. The message "Right" or "Wrong" is always displayed automatically.',
+                                    <?php _e('This text will be visible if answered incorrectly. It can be used as explanation for complex questions.',
                                         'wp-pro-quiz'); ?>
                                 </p>
                                 <?php

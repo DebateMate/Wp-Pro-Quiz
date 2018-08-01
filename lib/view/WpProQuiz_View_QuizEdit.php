@@ -1021,13 +1021,13 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
     {
         ?>
 
-        <div class="postbox <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'hidden'; ?>">
+        <div class="postbox">
             <h3 class="hndle"><?php _e('Question-Options', 'wp-pro-quiz'); ?></h3>
 
             <div class="inside">
                 <table class="form-table">
                     <tbody>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Show points', 'wp-pro-quiz'); ?>
                         </th>
@@ -1049,7 +1049,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                             </fieldset>
                         </td>
                     </tr>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Number answers', 'wp-pro-quiz'); ?>
                         </th>
@@ -1112,7 +1112,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                             </fieldset>
                         </td>
                     </tr>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Correct and incorrect answer mark', 'wp-pro-quiz'); ?>
                         </th>
@@ -1143,7 +1143,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                             </fieldset>
                         </td>
                     </tr>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Force user to answer each question', 'wp-pro-quiz'); ?>
                         </th>
@@ -1167,7 +1167,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                             </fieldset>
                         </td>
                     </tr>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Hide question position overview', 'wp-pro-quiz'); ?>
                         </th>
@@ -1199,7 +1199,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                             </fieldset>
                         </td>
                     </tr>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Hide question numbering', 'wp-pro-quiz'); ?>
                         </th>
@@ -1231,7 +1231,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                             </fieldset>
                         </td>
                     </tr>
-                    <tr>
+                    <tr <?php if ( !current_user_can('dmQuiz_edit_quiz_advanced') ) echo 'class="hidden"'; ?>>
                         <th scope="row">
                             <?php _e('Display category', 'wp-pro-quiz'); ?>
                         </th>
