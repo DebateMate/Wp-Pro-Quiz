@@ -115,6 +115,7 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
 
         $statisticRefMapper = new WpProQuiz_Model_StatisticRefMapper();
         $statisticRefMapper->statisticSave($statisticRefModel, $values);
+        do_action( 'wpProQuiz_after_statistic_save', $statisticRefModel, $values );
 
         return true;
     }
